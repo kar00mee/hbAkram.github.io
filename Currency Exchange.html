@@ -4,279 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency Convertor App Using Javascript</title>
-    <link rel="stylesheet" href="currency.css">
+    <link rel="stylesheet" href="curr.css">
 </head>
 <body>
-    <div class="wrapper">
+    <div class="container">
         <h1>Currency Convertor</h1>
-      <form action ="#">
-            <div class="amount">
-               <p>Enter Amount</p>
-                <input type="text" value=" 0.00" id ="" >
+        <div class="box">
+            <div class="left_box">
+                <select name="currency" class="currency"></select>
+                <input type="number" name="" id="num">
             </div>
-            <div class="drop-list">
-                <div class = "from">
-              <p>From</p>
-                    <div class = "select-box">
-<img src="<img src="https://flagcdn.com/48*36/gb.png" alt ="flag">
-<select>
-                    
- </select>          
- </div>
- </div>
-<div class ="icon"><i class ="fas fa-exchange-alt"></i></div>
-    <div class = "to">
- <p>To</p>
-      <div class = "select-box">
-<img src="<img src="https://flagcdn.com/48*36/us.png" alt ="flag">
-<select>
-                       
- </select>
-</div>
-</div>
- </div>
-  <div class =exchang-rate">Exchange Rate....</div>
-   <button>Convert</button>
-  </form>
- </div>
+            <div class="right_box">
+                <select name="currency" class="currency"></select>
+                <input type="text" name="" id="ans" disabled>
+            </div>
+        </div>
+        <button class="btn" id="btn">Convert</button>
+   
+
+  
 
     
         
        
 </body>
 </html>
-let country_code ={
-    "AED" : "AE",
-    "AFN" : "AF",
-    "XCD" : "AG",
-    "ALL" : "AL",
-    "AMD" : "AM",
-    "ANG" : "AN",
-    "AOA" : "AO",
-    "AQD" : "AQ",
-    "ARS" : "AR",
-    "AUD" : "AU",
-    "AZN" : "AZ",
-    "BAM" : "BA",
-    "BBD" : "BB",
-    "BDT" : "BD",
-    "XOF" : "BE",
-    "BGN" : "BG",
-    "BHD" : "BH",
-    "BIF" : "BI",
-    "BMD" : "BM",
-    "BND" : "BN",
-    "BOB" : "BO",
-    "BRL" : "BR",
-    "BSD" : "BS",
-    "NOK" : "BV",
-    "BWP" : "BW",
-    "BYR" : "BY",
-    "BZD" : "BZ",
-    "CAD" : "CA",
-    "CDF" : "CD",
-    "XAF" : "CF",
-    "CHF" : "CH",
-    "CLP" : "CL",
-    "CNY" : "CN",
-    "COP" : "CO",
-    "CRC" : "CR",
-    "CUP" : "CU",
-    "CVE" : "CV",
-    "CYP" : "CY",
-    "CZK" : "CZ",
-    "DJF" : "DJ",
-    "DKK" : "DK",
-    "DOP" : "DO",
-    "DZD" : "DZ",
-    "ECS" : "EC",
-    "EEK" : "EE",
-    "EGP" : "EG",
-    "ETB" : "ET",
-    "EUR" : "FR",
-    "FJD" : "FJ",
-    "FKP" : "FK",
-    "GBP" : "GB",
-    "GEL" : "GE",
-    "GGP" : "GG",
-    "GHS" : "GH",
-    "GIP" : "GI",
-    "GMD" : "GM",
-    "GNF" : "GN",
-    "GTQ" : "GT",
-    "GYD" : "GY",
-    "HKD" : "HK",
-    "HNL" : "HN",
-    "HRK" : "HR",
-    "HTG" : "HT",
-    "HUF" : "HU",
-    "IDR" : "ID",
-    "ILS" : "IL",
-    "INR" : "IN",
-    "IQD" : "IQ",
-    "IRR" : "IR",
-    "ISK" : "IS",
-    "JMD" : "JM",
-    "JOD" : "JO",
-    "JPY" : "JP",
-    "KES" : "KE",
-    "KGS" : "KG",
-    "KHR" : "KH",
-    "KMF" : "KM",
-    "KPW" : "KP",
-    "KRW" : "KR",
-    "KWD" : "KW",
-    "KYD" : "KY",
-    "KZT" : "KZ",
-    "LAK" : "LA",
-    "LBP" : "LB",
-    "LKR" : "LK",
-    "LRD" : "LR",
-    "LSL" : "LS",
-    "LTL" : "LT",
-    "LVL" : "LV",
-    "LYD" : "LY",
-    "MAD" : "MA",
-    "MDL" : "MD",
-    "MGA" : "MG",
-    "MKD" : "MK",
-    "MMK" : "MM",
-    "MNT" : "MN",
-    "MOP" : "MO",
-    "MRO" : "MR",
-    "MTL" : "MT",
-    "MUR" : "MU",
-    "MVR" : "MV",
-    "MWK" : "MW",
-    "MXN" : "MX",
-    "MYR" : "MY",
-    "MZN" : "MZ",
-    "NAD" : "NA",
-    "XPF" : "NC",
-    "NGN" : "NG",
-    "NIO" : "NI",
-    "NPR" : "NP",
-    "NZD" : "NZ",
-    "OMR" : "OM",
-    "PAB" : "PA",
-    "PEN" : "PE",
-    "PGK" : "PG",
-    "PHP" : "PH",
-    "PKR" : "PK",
-    "PLN" : "PL",
-    "PYG" : "PY",
-    "QAR" : "QA",
-    "RON" : "RO",
-    "RSD" : "RS",
-    "RUB" : "RU",
-    "RWF" : "RW",
-    "SAR" : "SA",
-    "SBD" : "SB",
-    "SCR" : "SC",
-    "SDG" : "SD",
-    "SEK" : "SE",
-    "SGD" : "SG",
-    "SKK" : "SK",
-    "SLL" : "SL",
-    "SOS" : "SO",
-    "SRD" : "SR",
-    "STD" : "ST",
-    "SVC" : "SV",
-    "SYP" : "SY",
-    "SZL" : "SZ",
-    "THB" : "TH",
-    "TJS" : "TJ",
-    "TMT" : "TM",
-    "TND" : "TN",
-    "TOP" : "TO",
-    "TRY" : "TR",
-    "TTD" : "TT",
-    "TWD" : "TW",
-    "TZS" : "TZ",
-    "UAH" : "UA",
-    "UGX" : "UG",
-    "USD" : "US",
-    "UYU" : "UY",
-    "UZS" : "UZ",
-    "VEF" : "VE",
-    "VND" : "VN",
-    "VUV" : "VU",
-    "YER" : "YE",
-    "ZAR" : "ZA",
-    "ZMK" : "ZM",
-    "ZWD" : "ZW"
+<script>
+const select = document.querySelectorAll(".currency");
+const btn = document.getElementById("btn");
+const num = document.getElementById("num");
+const ans = document.getElementById("ans");
+
+fetch("https://api.frankfurter.app/currencies")
+  .then((data) => data.json())
+  .then((data) => {
+    display(data);
+  });
+
+function display(data) {
+  const entries = Object.entries(data);
+  for (var i = 0; i < entries.length; i++) {
+    select[0].innerHTML += `<option value="${entries[i][0]}">${entries[i][0]}</option>`;
+    select[1].innerHTML += `<option value="${entries[i][0]}">${entries[i][0]}</option>`;
+  }
 }
 
-  
- const droplist = document.querySelectorAll(".drop-list select");
- fromCurrency = document.querySelectorA(".from select");
- toCurrency = document.querySelector(".to select");
-getButton = document.querySelector("form button");
-    for  (let i = 0; i < droplist.length; i++){
-        for(let currency_code in country_code){
-            let selecyted=
-            i==0
-        ?currency_code =="GBP"
-         "selexted"
-         :""   
-           :currency_code == "USD"
-            ?"selected"
-               :"";
-          
-            let optionTag =<'option value = "${currency_code}" ${selected}>${currency_code}</option>';
-    droplist[i].insertASjacentHTML("beforeend" ,optionTag);        
-        }
-        droplist[i].addEventListener("change" , (e) =>{
-            loadFlag(e.target);
-        });
-    }
-    function loadFlag(element){
-        for(let code in country_code){
-            if(code == element.value){
-                let imgTag = element.parentElement.qureySelector("img");
-                imgTag.src = 'https://flagcdn.com/48*36${country_list[code]tolowerCase()}.png'
-            }
-        }
-    }
-    window.addEventListener("load" , () =>{
-        getExchangeRate()
-    })
-getButton.addventListener("click" , e =>{
-    e.preventDefault()
-    getExchangeRate();
-}) 
-    const exchangeIcon = document.querySelector("from .icon");
-    exchangeIcon.addEventListener("click" , () =>{
-        let tempCode = fromCurrency.value;
-        fromCurrency.value =  toCurrency.value;
-        toCurrency.value = tempCode;
-        loadFlag(fromCurrency);
-        loadFlag(toCurrency);
-        getExchangeRate();
-    })
-    Function getExchangeRate(){
-        const amount = document.querySelector("form ipout");
-     const exchangeRatetxt = document.qureySelector("form.exchange-rate");
-        let amountVal = amount.value ;
-        if (amountVal == "" || amountVal == 0){
-            amount.value ="1";
-            amountVal =1;
-            
-        }
-    }
-     exchangeRateTxt.innerText = "Getting Exchange Rate....";
-        let url ='https://v6.exchangerate-api.com/v6/b00c4a7c0282d61caa10fc25/latest/${fromCurrency.value};'
-        fetch(url)
-        .then((response)=>Response.json())
-        .then((result) =>{
-        let exchangeRate = result.conversion_rates[toCurrency.value];
-        let totalExchangeRate = (amountValn * exchangeRate).toFixed(2);   
-         cosole.log(totalExchangeRate);
-          exchangeRateTxt.innerText ='${amountVal}${fromCurrency.value} = ${totalExRate}${toCurrency.value}'; 
-        })
-            .catch(() => {
-                exchangeRateTxt.isConnected ="something Went Wrong.."
-           
-        })
-    }
+btn.addEventListener("click", () => {
+  let currency1 = select[0].value;
+  let currency2 = select[1].value;
+  let value = num.value;
 
+  if (currency1 != currency2) {
+    convert(currency1, currency2, value);
+  } else {
+    alert("Choose Different Currencies !!!");
+  }
+});
+
+function convert(currency1, currency2, value) {
+  const host = "api.frankfurter.app";
+  fetch(
+    `https://${host}/latest?amount=${value}&from=${currency1}&to=${currency2}`
+  )
+    .then((val) => val.json())
+    .then((val) => {
+      console.log(Object.values(val.rates)[0]);
+      ans.value = Object.values(val.rates)[0];
+    });
+}
+    </script>
