@@ -5,7 +5,8 @@
 }
 
 body{
-  background: linear-gradient(153-153-153);
+  background: linear-gradient(	
+0 - 0 -255);
   height: 100vh;
   display: flex;
   align-items: center;
