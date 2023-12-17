@@ -12,36 +12,30 @@
       <form action ="#">
             <div class="amount">
                <p>Enter Amount</p>
-                <input type="text" value=" 0.00">
+                <input type="text" value=" 0.00" id ="" >
             </div>
             <div class="drop-list">
                 <div class = "from">
               <p>From</p>
                     <div class = "select-box">
-<img src="<img src="https://www.flagsapi.com/GB/shiny/64.png" alt ="flag">
+<img src="<img src="https://flagcdn.com/48*36/gb.png" alt ="flag">
 <select>
-     <option value ="GPB">GPB</option>
-     <option value ="USD">USD</option>
-     <option value ="EUR">EUR</option>
-     <option value ="YEN">YEN</option>                   
+                    
  </select>          
  </div>
  </div>
-                <div class ="icon"><i class ="fas fa-exchange-alt"></i></div>
+<div class ="icon"><i class ="fas fa-exchange-alt"></i></div>
     <div class = "to">
  <p>To</p>
       <div class = "select-box">
-<img src="https://www.flagsapi.com/uk/shiny/64.png" alt ="flag">
+<img src="<img src="https://flagcdn.com/48*36/us.png" alt ="flag">
 <select>
-     <option value ="GPB">GPB</option>
-     <option value ="USD">USD</option>
-     <option value ="EUR">EUR</option>
-     <option value ="YEN">YEN</option>                   
+                       
  </select>
 </div>
 </div>
  </div>
-  <div class =exchang-rate"></div>
+  <div class =exchang-rate">Exchange Rate....</div>
    <button>Convert</button>
   </form>
  </div>
@@ -59,36 +53,39 @@
  toCurrency = document.querySelector(".to select");
 getButton = document.querySelector("form button");
     for  (let i = 0; i < droplist.length; i++){
-        for(currency_code in country_code){
-            let selecyted;
-            if(i==0){
-               selected = currency_code == "GPB"? "selected" : "";
-            }else if (i==1){
-            selected = currency_code == "USD"? "selected" : "";    
-            }
-            let optionTag =<option value = "${currency_code}" ${selected}>${currency_code}</option>
+        for(let currency_code in country_list){
+            let selecyted=
+            i==0
+        ?currency_code =="GBP"
+         "selexted"
+         :""   
+           :currency_code == "USD"
+            ?"selected"
+               :"";
+          
+            let optionTag =<'option value = "${currency_code}" ${selected}>${currency_code}</option>';
     droplist[i].insertASjacentHTML("beforeend" ,optionTag);        
         }
-        droplist[i].addEventListener("change" , e =>{
+        droplist[i].addEventListener("change" , (e) =>{
             loadFlag(e.target);
         });
     }
     function loadFlag(element){
-        for(code in country_code){
+        for(let code in country_list){
             if(code == element.value){
                 let imgTag = element.parentElement.qureySelector("img");
-                imgTag.src = 'https://www.flagsapi.com/${country_code}[code]/GB/shiny/64.png'
+                imgTag.src = 'https://flagcdn.com/48*36${country_list[code]tolowerCase()}.png'
             }
         }
     }
     window.addEventListener("load" , () =>{
-        getExchangeRate();
-    });
+        getExchangeRate()
+    })
 getButton.addventListener("click" , e =>{
-    e.preventDefault();
+    e.preventDefault()
     getExchangeRate();
-});  
-    const exchangeIcon = document.querySelector(".drop-list .icon");
+}) 
+    const exchangeIcon = document.querySelector("from .icon");
     exchangeIcon.addEventListener("click" , () =>{
         let tempCode = fromCurrency.value;
         fromCurrency.value =  toCurrency.value;
@@ -96,23 +93,30 @@ getButton.addventListener("click" , e =>{
         loadFlag(fromCurrency);
         loadFlag(toCurrency);
         getExchangeRate();
-    });
+    })
     Function getExchangeRate(){
-        const amount = document.querySelector(".amount inout"),
-      exchangeRatetxt = document.qureySelector(".exchange-rate");
+        const amount = document.querySelector("form ipout");
+     const exchangeRatetxt = document.qureySelector("form.exchange-rate");
         let amountVal = amount.value ;
         if (amountVal == "" || amountVal == 0){
-            alert("Please Enter your Amount");
+            amount.value ="1";
+            amountVal =1;
             
         }
+    }
+     exchangeRateTxt.innerText = "Getting Exchange Rate....";
         let url ='https://v6.exchangerate-api.com/v6/b00c4a7c0282d61caa10fc25/latest/${fromCurrency.value};'
-        fetch(url).then(response.json()).then(result =>{
-        let exchangeRate = result.conversion_rates[toCurrency];
+        fetch(url)
+        .then((response)=>Response.json())
+        .then((result) =>{
+        let exchangeRate = result.conversion_rates[toCurrency.value];
         let totalExchangeRate = (amountValn * exchangeRate).toFixed(2);   
          cosole.log(totalExchangeRate);
-          exchangeRateTxt.innerText ='${amountVal}${fromCurrency.value} = ${totalExchangeRate}${fromCurrency.value}'; 
-        }).catch(() => {
-            exchangeRateTxt.innerText = "Something went wrong";
+          exchangeRateTxt.innerText ='${amountVal}${fromCurrency.value} = ${totalExRate}${toCurrency.value}'; 
+        })
+            .catch(() => {
+                exchangeRateTxt.isConnected ="something Went Wrong.."
+           
         })
     }
 </script>
