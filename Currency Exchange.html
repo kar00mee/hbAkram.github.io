@@ -59,7 +59,7 @@ btn.addEventListener("click", () => {
 });
 
 function convert(currency1, currency2, value) {
-  const host = "api.frankfurter.app";
+  const host = " https://v6.exchangerate-api.com/v6/b00c4a7c0282d61caa10fc25/latest/";
   fetch(
     `https://${host}/latest?amount=${value}&from=${currency1}&to=${currency2}`
   )
