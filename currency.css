@@ -41,7 +41,7 @@ select{
   height: 40px;
   font-size: 1.2em;
   cursor: pointer;
-  background: #66ffcc;
+  background: #FFFFFF;
   outline: none;
   color: black;
   margin: 0.2em 0;
@@ -58,7 +58,7 @@ input{
   margin: 0.2em 0;
   border-radius: 10px;
   border: none;
-  background: #cccccc;
+  background:#FFFFFF;
   outline: none;
   padding: 0 1em;
 }
