@@ -32,7 +32,7 @@ const btn = document.getElementById("btn");
 const num = document.getElementById("num");
 const ans = document.getElementById("ans");
 
-fetch(" https://v6.exchangerate-api.com/v6/b00c4a7c0282d61caa10fc25/latest/USD")
+fetch(" https://api.frankfurter.app/currencies")
   .then((data) => data.json())
   .then((data) => {
     display(data);
@@ -59,7 +59,7 @@ btn.addEventListener("click", () => {
 });
 
 function convert(currency1, currency2, value) {
-  const host = " https://v6.exchangerate-api.com/v6/b00c4a7c0282d61caa10fc25/latest/";
+  const host = " api.frankfurter.app/currencies";
   fetch(
     `https://${host}/latest?amount=${value}&from=${currency1}&to=${currency2}`
   )
