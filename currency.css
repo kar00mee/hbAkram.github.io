@@ -1,77 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
-
 body{
-  background: linear-gradient(315deg, #0066FF, #00FFCC);
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
+  padding: 0 10px;
+  background: #675AFE;
 }
-
-.container{
-  background-color: white;
-  padding: 10px 24px;
-  border-radius: 20px;
-  width: 490px;
+::selection{
+  color: #fff;
+  background: #675AFE;
 }
-
-h1{
-  color: #364547;
-  margin-left: 72px;
-  margin-bottom: 0.5em;
-  font-family: sans-serif;
+.wrapper{
+  width: 370px;
+  padding: 30px;
+  border-radius: 7px;
+  background: #fff;
+  box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.05);
 }
-
-
-.container .box{
+.wrapper header{
+  font-size: 28px;
+  font-weight: 500;
+  text-align: center;
+}
+.wrapper form{
+  margin: 40px 0 20px 0;
+}
+form :where(input, select, button){
   width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+}
+form p{
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+form input{
+  height: 50px;
+  font-size: 17px;
+  padding: 0 15px;
+  border: 1px solid #999;
+}
+form input:focus{
+  padding: 0 14px;
+  border: 2px solid #675AFE;
+}
+form .drop-list{
   display: flex;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: space-between;
 }
-
-.box div{
-  width: 100%;
+.drop-list .select-box{
+  display: flex;
+  width: 115px;
+  height: 45px;
+  align-items: center;
+  border-radius: 5px;
+  justify-content: center;
+  border: 1px solid #999;
 }
-
-select{
-  width: 95%;
-  height: 40px;
-  font-size: 1.2em;
+.select-box img{
+  max-width: 21px;
+}
+.select-box select{
+  width: auto;
+  font-size: 16px;
+  background: none;
+  margin: 0 -5px 0 5px;
+}
+.select-box select::-webkit-scrollbar{
+  width: 8px;
+}
+.select-box select::-webkit-scrollbar-track{
+  background: #fff;
+}
+.select-box select::-webkit-scrollbar-thumb{
+  background: #888;
+  border-radius: 8px;
+  border-right: 2px solid #ffffff;
+}
+.drop-list .icon{
   cursor: pointer;
-  background: #66ffcc;
-  outline: none;
-  color: black;
-  margin: 0.2em 0;
-  padding: 0 1em;
-  border-radius: 10px;
-  border: none;
+  margin-top: 30px;
+  font-size: 22px;
 }
-
-
-input{
-  width: 95%;
-  height: 40px;
-  font-size: 1em;
-  margin: 0.2em 0;
-  border-radius: 10px;
-  border: none;
-  background: #cccccc;
-  outline: none;
-  padding: 0 1em;
+form .exchange-rate{
+  font-size: 17px;
+  margin: 20px 0 30px;
 }
-
-
-.btn{
-  width: 98%;
-  height: 40px;
-  background: #364547;
-  color: white;
-  border-radius: 10px;
-  border: none;
+form button{
+  height: 52px;
+  color: #fff;
+  font-size: 17px;
   cursor: pointer;
-  font-size: 1em;
-  margin: 0.5em 0;
+  background: #675AFE;
+  transition: 0.3s ease;
+}
+form button:hover{
+  background: #4534fe;
 }
