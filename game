@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Car Game</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden; /* Hide scrollbars */
+    }
+  </style>
+</head>
+<body>
+
+<script>
+ 
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  document.body.appendChild(canvas);
+
+ 
+  canvas.width = 800;
+  canvas.height = 400;
+
+  
+
+ 
+  update();
+</script>
+
+</body>
+</html>
+
+  const canvas = document.createElement('canvas');
+const ctx = canvas.getContext('2d');
+document.body.appendChild(canvas);
+
+
+canvas.width = 800;
+canvas.height = 400;
+
+
+const car = {
+  x: 50,
+  y: canvas.height / 2,
+  width: 50,
+  height: 30,
+  speed: 5,
+  dx: 0,
+  dy: 0
+};
+
+
+const obstacle = {
+  x: canvas.width - 100,
+  y: canvas.height / 2,
+  width: 50,
+  height: 50,
+  speed: 3
+};
+
+
+function drawCar() {
+  ctx.fillStyle = 'blue';
+  ctx.fillRect(car.x, car.y, car.width, car.height);
+}
+
+
+function drawObstacle() {
+  ctx.fillStyle = 'red';
+  ctx.fillRect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
+}
+
+
+function update() {
+  // Clear the canvas
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  
+  car.x += car.dx;
+  car.y += car.dy;
+
+  
+  obstacle.x -= obstacle.speed;
+
+  drawCar();
+  drawObstacle();
+
+  requestAnimationFrame(update);
+}
+
+function handleKeyDown(e) {
+  if (e.key === 'ArrowUp') {
+    car.dy = -car.speed;
+  } else if (e.key === 'ArrowDown') {
+    car.dy = car.speed;
+  } else if (e.key === 'ArrowLeft') {
+    car.dx = -car.speed;
+  } else if (e.key === 'ArrowRight') {
+    car.dx = car.speed;
+  }
+}
+
+
+function handleKeyUp(e) {
+  if (
+    e.key === 'ArrowUp' ||
+    e.key === 'ArrowDown' ||
+    e.key === 'ArrowLeft' ||
+    e.key === 'ArrowRight'
+  ) {
+    car.dx = 0;
+    car.dy = 0;
+  }
+}
+
+
+document.addEventListener('keydown', handleKeyDown);
+document.addEventListener('keyup', handleKeyUp);
+
+update();
