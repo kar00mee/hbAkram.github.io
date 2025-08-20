@@ -385,14 +385,16 @@
 
            
             <nav>
-               <ul>
-    <li><a href="index.html">HOME</a></li>
-    <li><a href="trainees.html">TRAINEES</a></li>
-    <li><a href="job-details.html">JOB DETAILS</a></li>
-    <li><a href="application-form.html">APPLICATION FORM</a></li>
-    <li><a href="course-info.html">COURSE INFO</a></li>
-    <li><a href="reviews.html">REVIEWS</a></li>
-</ul>
+              <div id="nav"></div>
+
+<script>
+  fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('nav').innerHTML = data;
+    });
+</script>
+
 
             </nav>
 
@@ -549,4 +551,5 @@
     </script>
 </body>
 </html>
+
 
