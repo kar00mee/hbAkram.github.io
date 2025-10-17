@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Meet our talented trainees at Hot Beans Web — your future developers.">
+<meta name="keywords" content="web development, trainees, Hot Beans Web, coding bootcamp">
     <title>Hot Beans Web</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="icon" href="./images/logo.png" type="image/x-icon">
+    <link rel="icon" href="./images/logo6.png" type="image/x-icon">
     <style>
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: white;
-            background: black;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: black; 
+    background: linear-gradient(to bottom, #2e3c4e 0%, #5a6d89 50%, #ffffff 100%);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
         header {
             display: flex;
             flex-direction: column;
@@ -50,19 +52,11 @@
 }
 
 .logo img {
-    height: 100px; 
-    width: 100px;
+    height: auto; 
+    width: 200px;
     margin-bottom: -1px; 
 }
 
-.slogan {
-    font-size: 12px;
-    color: white;
-    font-weight: bold;
-    margin-top:0;
-    text-transform: uppercase; 
-    letter-spacing: 1px; 
-}
         nav {
             position: absolute;
             left: 50%;
@@ -168,7 +162,6 @@
             display: flex;
             flex-direction: column;
             padding: 40px;
-            background: black;
             align-items: center;
             margin-left: 50px;
             flex-grow: 1;
@@ -189,48 +182,89 @@
         .trainees {
             display: flex;
             justify-content: space-between;
-            gap: 20px;
+            gap: 25px;
             flex-wrap: nowrap;
             margin-top: 20px;
             overflow-x: auto;
             padding-bottom: 20px;
+			align-items: stretch;
         }
         .trainee-card {
-            background-color: #333;
-            padding: 20px;
-            width: 250px;
-            text-align: left;
-            border-radius: 15px;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
-            height: 550px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+    background: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(10px);    
+    color: white;                   
+    padding: 20px;
+    width: 250px;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	flex: 1;                
+  height: auto; 
+}
+
         .trainee-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
-        }
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(255, 0, 0, 0.5);
+}
+
         .trainee-card img {
             width: 100%;
             height: 250px;
             object-fit: cover;
             border-radius: 15px;
-            transition: transform 0.3s ease-in-out;
+            transition: transform 0.3s ease-in-out; 
+			margin-bottom:10px;
         }
         .trainee-info {
             display: flex;
             flex-direction: column;
             gap: 3px;
+			max-height:255px;
+			
+			
         }
-        .trainee-info p {
-            background-color: #444;
-            padding: 10px;
-            border-radius: 10px;
-        }
+       .trainee-info p {
+    background-color: rgba(255, 255, 255, 0.1); 
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+	margin-bottom:6px;
+	line-height:1.4;
+	font-size:14px;
+	
+}
+.trainee-name {
+    margin-top: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 8px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    display: flex;
+    justify-content: centre;
+    align-items:centre;
+	max-height:80px;
+}
+
+.trainee-name strong {
+    color: #ff4c4c; 
+}
+
+
+
+
+
+
+
+
         .trainee-info p strong {
-            color: black;
+            color: #ff4c4c;
             font-weight: bold;
         }
         .apply-container {
@@ -356,6 +390,44 @@
             font-size: 20px;
             cursor: pointer;
         }
+		
+		
+		
+		.mode-toggle {
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    right: 20px;
+    top: 80px; /* أسفل SIGN IN */
+    z-index: 2;
+}
+.mode-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+
+
+
+body.dark-mode {
+    background: #121212;
+    color: white;
+}
+
+body.dark-mode .trainee-card,
+body.dark-mode .flip-card-front,
+body.dark-mode .flip-card-back {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+
     </style>
 </head>
 <body>
@@ -364,28 +436,26 @@
             
             <div class="logo">
                 <a href="Home.html"> 
-                    <img src="./images/logo.png" alt="Hot Beans Logo">
+                    <img src="./images/logo6.png" alt="Hot Beans Logo">
                 </a>
-				 <p class="slogan">Brewing the Future</p>
             </div>
 
             
             <nav>
-              <div id="nav"></div>
-
-<script>
-  fetch('navbar.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('nav').innerHTML = data;
-    });
-</script>
-
-
+                <ul>
+                    <li><a href="Home.html">HOME</a></li>
+                    <li><a href="trainees.html">TRAINEES</a></li>
+                    <li><a href="job details.html">JOB DETAILS</a></li>
+                    <li><a href="Application Form.html">APPLICATION FORM</a></li>
+                    <li><a href="course Info.html">COURSE INFO</a></li>
+                    <li><a href="reviews.html">REVIEWS</a></li>
+                </ul>
             </nav>
 
             
             <a href="#" class="signin" onclick="openModal('loginModal')">SIGN IN</a>
+			
+			<button id="modeToggle" class="mode-toggle">🌙</button>
         </div>
 
         
@@ -401,33 +471,49 @@
             <p>DISCOVER THE TALENTED INDIVIDUALS BUILDING THEIR FUTURE AT HOT BEANS WEB</p>
             <div class="trainees">
                 <div class="trainee-card">
-                    <img src=".\images\en.jpg" alt="Trainee 1">
-                    <div class="trainee-info">
-                        <p><strong>Name:</strong> James Carter</p>
+                    <img src="./images/en.jpg" alt="Trainee 1">
+					
+                    <div class="trainee-name">
+                    <strong>Name:</strong>&nbsp; James Carter
+                    </div>
+					
+					<div class="trainee-info">
                         <p><strong>Bio:</strong> A passionate web developer from London, specializing in front-end technologies like React and JavaScript.</p>
                         <p><strong>Skills:</strong> HTML, CSS, JavaScript, React, UI/UX Design</p>
                     </div>
                 </div>
                 <div class="trainee-card">
-                    <img src=".\images\mh.jpg" alt="Trainee 2">
+                    <img src="./images/mh.jpg" alt="Trainee 2">
+					
+					<div class="trainee-name">
+                    <strong>Name:</strong>&nbsp; Aisha Khan
+                    </div>
+					
                     <div class="trainee-info">
-                        <p><strong>Name:</strong> Aisha Khan</p>
                         <p><strong>Bio:</strong> A dedicated software engineer from Pakistan, with a focus on backend development and database management.</p>
                         <p><strong>Skills:</strong> Python, Django, SQL, REST APIs, Cloud Computing</p>
                     </div>
                 </div>
                 <div class="trainee-card">
-                    <img src=".\images\af.jpg" alt="Trainee 3">
+                    <img src="./images/af.jpg" alt="Trainee 3">
+					
+					<div class="trainee-name">
+                    <strong>Name:</strong>&nbsp; Fatoumata Diallo
+                    </div>
+					
                     <div class="trainee-info">
-                        <p><strong>Name:</strong> Fatoumata Diallo</p>
                         <p><strong>Bio:</strong> A talented full-stack developer from Senegal, passionate about building scalable and user-friendly applications.</p>
                         <p><strong>Skills:</strong> Node.js, MongoDB, Angular, Docker, DevOps</p>
                     </div>
                 </div>
                 <div class="trainee-card">
-                    <img src=".\images\as.jpg" alt="Trainee 4">
+                    <img src="./images/as.jpg" alt="Trainee 4">
+					
+					<div class="trainee-name">
+                    <strong>Name:</strong>&nbsp;Hiroshi Tanaka
+                    </div>
+					
                     <div class="trainee-info">
-                        <p><strong>Name:</strong> Hiroshi Tanaka</p>
                         <p><strong>Bio:</strong> A skilled mobile app developer from Japan, with expertise in cross-platform development and AI integration.</p>
                         <p><strong>Skills:</strong> Flutter, Kotlin, Swift, Machine Learning, Firebase</p>
                     </div>
@@ -507,8 +593,31 @@
         function closeAllModals() {
             document.querySelectorAll('.modal').forEach(modal => modal.style.display = 'none');
         }
+		
+		
+		
+		
+    const toggleButton = document.getElementById("modeToggle");
+    const body = document.body;
+
+   
+    if (localStorage.getItem("theme") === "dark") {
+        body.classList.add("dark-mode");
+        toggleButton.textContent = "☀️";
+    }
+
+    toggleButton.addEventListener("click", () => {
+        body.classList.toggle("dark-mode");
+        if (body.classList.contains("dark-mode")) {
+            localStorage.setItem("theme", "dark");
+            toggleButton.textContent = "☀️";
+        } else {
+            localStorage.setItem("theme", "light");
+            toggleButton.textContent = "🌙";
+        }
+    });
+
+
     </script>
 </body>
 </html>
-
-
