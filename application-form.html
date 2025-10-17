@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Meet our talented trainees at Hot Beans Web — your future developers.">
+<meta name="keywords" content="web development, trainees, Hot Beans Web, coding bootcamp">
     <title>Hot Beans Web Application Form</title>
     
-    <link rel="icon" href="./images/logo.png" type="image/x-icon">
+    <link rel="icon" href="./images/logo10.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: white;
-            background: black;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: black; 
+    background: linear-gradient(to bottom, #2e3c4e 0%, #5a6d89 50%, #ffffff 100%);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
         header {
             display: flex;
@@ -55,19 +57,12 @@
 }
 
 .logo img {
-    height: 100px; 
-    width: 100px;
+    height: auto; 
+    width: 200px;
     margin-bottom: -1px; 
 }
 
-.slogan {
-    font-size: 12px;
-    color: white;
-    font-weight: bold;
-    margin-top:0;
-    text-transform: uppercase; 
-    letter-spacing: 1px; 
-}
+
 		  
         nav {
             flex-grow: 1;
@@ -187,83 +182,107 @@
             background: darkred;
         }
 
-        .application-form {
-            background-color: #222;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px auto 40px; /* margin-top أقل */
-            max-width: 600px;
-            width: 90%;
-        }
+       .application-form {
+    background-color: #ffffff;
+    color: #222;
+    padding: 30px 40px;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 90%;
+    margin: 40px auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+}
 
-        .application-form h2 {
-            font-size: 24px;
-            color: white;
-            text-align: center;
-            margin-bottom: 20px;
-        }
+.application-form h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 24px;
+    color: #333;
+}
 
-        .application-form label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
+.application-form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
 
-        .application-form input[type="text"],
-        .application-form input[type="email"],
-        .application-form input[type="tel"],
-        .application-form select,
-        .application-form textarea {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 14px;
-            background: #333;
-            color: white;
-        }
+.application-form input[type="text"],
+.application-form input[type="email"],
+.application-form input[type="tel"],
+.application-form select,
+.application-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background: #f5f5f5;
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #333;
+}
 
-        .application-form input[type="file"] {
-            display: none;
-        }
+.application-form input[type="file"] {
+    display: none;
+}
 
-        .file-upload-container {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px 12px;
+    margin-bottom: 15px;
+}
 
-        .custom-file-upload,
-        .upload-button {
-            background: red;
-            color: white;
-            padding: 8px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: 0.3s ease-in-out;
-        }
+.checkbox-group label {
+    font-weight: normal;
+}
 
-        .custom-file-upload:hover,
-        .upload-button:hover {
-            background: darkred;
-        }
+.application-form .file-upload-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
 
-        .upload-button {
-            background: #4CAF50;
-        }
+.custom-file-upload, .upload-button, .submit-button {
+    padding: 10px 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-        .upload-button:hover {
-            background: #45a049;
-        }
+.custom-file-upload {
+    background-color: red;
+    color: white;
+}
 
-        .file-list {
-            margin-top: 10px;
-            font-size: 14px;
-            color: #ccc;
-        }
+.upload-button {
+    background-color: #28a745;
+    color: white;
+}
+
+.submit-button {
+    background-color: #dc3545;
+    color: white;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.custom-file-upload:hover,
+.upload-button:hover,
+.submit-button:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+.file-list {
+    font-size: 13px;
+    margin-top: 10px;
+    color: #555;
+}
 
         .file-list div {
             display: flex;
@@ -436,6 +455,75 @@
             font-size: 20px;
             cursor: pointer;
         }
+		
+		
+		
+		
+		
+.loader-overlay {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(46, 60, 78, 0.8); 
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid red;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+.mode-toggle {
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    right: 20px;
+    top: 80px; 
+    z-index: 2;
+}
+.mode-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+
+
+body.dark-mode {
+    background: #121212;
+    color: white;
+}
+
+body.dark-mode .trainee-card,
+body.dark-mode .flip-card-front,
+body.dark-mode .flip-card-back {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+
     </style>
 </head>
 <body>
@@ -443,24 +531,23 @@
         <div class="header-top">
             <div class="logo">
                 <a href="Home.html">
-                    <img src="./images/logo.png" alt="Hot Beans Logo">
+                    <img src="./images/logo6.png" alt="Hot Beans Logo">
                 </a>
-				<p class="slogan">Brewing the Future</p>
+				
             </div>
             <nav>
-<div id="nav"></div>
-
-<script>
-  fetch('navbar.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('nav').innerHTML = data;
-    });
-</script>
-
-
+                <ul>
+                    <li><a href="Home.html">HOME</a></li>
+                    <li><a href="trainees.html">TRAINEES</a></li>
+                    <li><a href="job details.html">JOB DETAILS</a></li>
+                    <li><a href="Application Form.html">APPLICATION FORM</a></li>
+                    <li><a href="course Info.html">COURSE INFO</a></li>
+                    <li><a href="reviews.html">REVIEWS</a></li>
+                </ul>
             </nav>
             <a href="#" class="signin" onclick="openModal('loginModal')">SIGN IN</a>
+			
+			<button id="modeToggle" class="mode-toggle">🌙</button>
         </div>
         <div class="search-bar">
             <input type="text" placeholder="Search...">
@@ -470,7 +557,10 @@
 
     <section class="application-form">
         <h2>Application Form</h2>
-        <form action="#" method="post">
+     <form action="https://formspree.io/f/xqaqalbb" method="POST" enctype="multipart/form-data" onsubmit="redirectToThankYou()">
+
+
+
             
             <div class="section">
                 <label for="fullName">FULL NAME:</label>
@@ -600,6 +690,11 @@
             <a href="#" onclick="openModal('loginModal')">Back to Sign In</a>
         </div>
     </div>
+	
+	<div class="loader-overlay" id="loader">
+  <div class="loader"></div>
+</div>
+
 
    <script>
    
@@ -667,8 +762,57 @@
         alert(`Uploading ${selectedFiles.length} file(s)...`);
         console.log(selectedFiles); 
     }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+function redirectToThankYou() {
+    document.getElementById('loader').style.display = 'flex';
+    setTimeout(function() {
+        window.location.href = "thankyou.html"; 
+    }, 1000);  
+}
+
+
+
+
+
+
+    const toggleButton = document.getElementById("modeToggle");
+    const body = document.body;
+
+ 
+    if (localStorage.getItem("theme") === "dark") {
+        body.classList.add("dark-mode");
+        toggleButton.textContent = "☀️";
+    }
+
+    toggleButton.addEventListener("click", () => {
+        body.classList.toggle("dark-mode");
+        if (body.classList.contains("dark-mode")) {
+            localStorage.setItem("theme", "dark");
+            toggleButton.textContent = "☀️";
+        } else {
+            localStorage.setItem("theme", "light");
+            toggleButton.textContent = "🌙";
+        }
+    });
+
+
+</script>
+
+
 </script>
 </body>
 </html>
-
-
